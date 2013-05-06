@@ -1,0 +1,6 @@
+#welcome{:style => "padding-top: 30px;text-align: center;"}
+  %h3{:style => "padding-bottom: 30px;"} Choose
+  = image_tag 'give-receive.png', :usemap => "#givereceivemap"
+  %map{:name => "givereceivemap"}
+    %area{:alt => "Download", :title => "Download", :coords => "79,187,152,126,119,125,119,64,334,64,333,9,42,9,41,124,4,124,", :href => share_items_path, :shape => "poly"}
+    %area{:alt => "Share", :title => "Share", :coords => "148,190,149,135,366,136,366,77,332,71,403,9,479,76,442,76,441,190,", :href => new_share_item_path, :shape => "poly"}  

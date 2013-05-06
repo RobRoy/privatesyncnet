@@ -1,0 +1,20 @@
+%h3 My Shares
+.span8
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th Title
+        %th Description
+        %th SyncKey
+        %th Actions
+    %tbody
+      - @share_items.each do |share_item|
+        %tr
+          %td= share_item.name
+          %td= share_item.description
+          %td= share_item.key
+          - if share_item.user_id == current_user.id
+            %td
+              = link_to 'Show', share_item
+              = link_to 'Edit', edit_share_item_path(share_item)
+              = link_to 'Destroy', share_item, :method => :delete, :data => { :confirm => 'Are you sure?' }

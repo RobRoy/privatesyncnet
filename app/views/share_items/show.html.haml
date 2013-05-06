@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @share_item.name
+%p
+  %b Description:
+  = @share_item.description
+%p
+  %b Key:
+  = @share_item.key
+
+= link_to 'Edit', edit_share_item_path(@share_item)
+\|
+= link_to 'Back', share_items_path

@@ -1,0 +1,10 @@
+.modal{:id => "invites-#{user.id}", :style => "display: none;"}
+  = simple_form_for user, :url => user_path(user), :html => {:method => :put, :class => 'form-horizontal' } do |f|
+    .modal-header
+      %a.close{"data-dismiss" => "modal"} ×
+      %h3 Give user invites
+    .modal-body
+      = f.input :invitation_limit, :label => "How many?"
+    .modal-footer
+      = f.submit "Give invites", :class => "btn"
+      %a.btn{"data-dismiss" => "modal", :href => "#"} Close

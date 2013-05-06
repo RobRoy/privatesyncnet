@@ -13,14 +13,19 @@
     #main{:role => "main"}
       .container
         .content
-          .row
-            .span9
-              = render 'layouts/messages'
-              = yield
-            .span3
-              %h2 What is this?
-              #sidebar_content
-                Lorem Ipsum
+          - if controller.controller_name == 'home'
+            .row
+              .span12.home
+                = render 'layouts/invitecode'
+          - else
+            .row
+              .span9
+                = render 'layouts/messages'
+                = yield
+              .span3
+                %h2 What is this?
+                #sidebar_content
+                  Lorem Ipsum
           %footer
       / ! end of .container
     / ! end of #main

@@ -82,13 +82,13 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "2d058a7c7d6196290fe341fca51a1cf69eeeb00ec1fcd51424a26a3a148c84130afd3ee9f0dcdb716c771f7b470f8f3cbe18ca388543cf4fb3c400e729050918"
+  config.pepper = "2d058a7c7d6196290fe341fca51a1cf69eeeb00ec1fcd51424a26a3a148c84130afd3ee9f0dcdb716c771f7b470f8f3cbe18ca388543cf4fb3c400e729050918"
 
   # ==> Configuration for :invitable
   # The period the generated invitation token is valid, after
   # this period, the invited resource won't be able to accept the invitation.
   # When invite_for is 0 (the default), the invitation won't expire.
-  # config.invite_for = 2.weeks
+  config.invite_for = 0
 
   # Number of invitations users can send.
   # - If invitation_limit is nil, there is no limit for invitations, users can
@@ -98,11 +98,11 @@ Devise.setup do |config|
   # You can change invitation_limit column for some users so they can send more
   # or less invitations, even with global invitation_limit = 0
   # Default: nil
-  # config.invitation_limit = 5
+  config.invitation_limit = 0
 
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
+  config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :username => nil}
 
   # Flag that force a record to be valid before being actually invited

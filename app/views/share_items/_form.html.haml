@@ -1,0 +1,10 @@
+= simple_form_for(@share_item) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :key
+
+  .form-actions
+    = f.button :submit

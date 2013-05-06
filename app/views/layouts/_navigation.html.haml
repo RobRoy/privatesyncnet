@@ -2,16 +2,32 @@
 %ul.nav
   - if user_signed_in?
     %li
-      = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+      = link_to 'Browse Shares', share_items_path
+    %li
+      = link_to 'My Shares', my_shares_path
+    %li
+      = link_to 'Add Share', new_share_item_path
+    %li
+      = link_to 'Browse Tags', '#'
+    %li
+      = link_to 'Requests', '#'
   - else
     %li
       = link_to 'Login', new_user_session_path
-  - if user_signed_in?
-    %li
-      = link_to 'Edit account', edit_user_registration_path
-    - if current_user.has_role? :admin
+  / - else
+  /   %li
+  /     = link_to 'Sign up', new_user_registration_path
+  
+- if user_signed_in?
+  .right  
+    %ul.nav
+      - if current_user.has_role? :admin
+        %li
+          = link_to 'Admin', users_path
+      - if current_user.invitation_limit > 0
+        %li
+          = link_to "Invite someone (#{current_user.invitation_limit} invites)", new_user_invitation_path
       %li
-        = link_to 'Admin', users_path
-  - else
-    %li
-      = link_to 'Sign up', new_user_registration_path
+        = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+    %form.navbar-search.pull-left
+      %input.search-query{:placeholder => "Search", :type => "text"}/
