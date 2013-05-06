@@ -1,2 +1,0 @@
-module ShareItemsHelper
-end
