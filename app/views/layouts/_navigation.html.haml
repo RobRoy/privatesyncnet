@@ -23,7 +23,7 @@
     %ul.nav
       - if current_user.has_role? :admin
         %li
-          = link_to 'Admin', users_path
+          = link_to 'Admin', rails_admin_path
       - if current_user.invitation_limit > 0
         %li
           = link_to "Invite someone (#{current_user.invitation_limit} invites)", new_user_invitation_path

@@ -1,4 +1,6 @@
 Privatesyncnet::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   authenticated :user do
     root :to => 'welcome#index'
   end
